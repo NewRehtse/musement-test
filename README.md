@@ -2,7 +2,7 @@
 
 This is a test application which gets the list of the cities from Musement's API for each city gets the forecast for 
 the next 2 days using http://api.weatherapi.com and print to STDOUT 
-"Processed city [city name] | [weather today] - [wheather tomorrow]"
+"Processed city [city name] | [weather today] - [weather tomorrow]"
 
 *Example:*
 > Processed city Milan | Heavy rain - Partly cloudy
