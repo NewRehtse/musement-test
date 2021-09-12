@@ -18,3 +18,9 @@ the next 2 days using http://api.weatherapi.com and print to STDOUT
 ```bash
 $ go test -v ./...
 ```
+
+### Clean Code goimport
+
+``
+goimports -w -l *.go && golint *.go
+``
