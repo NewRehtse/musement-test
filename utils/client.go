@@ -28,7 +28,7 @@ func (c *client) GetDataFromUrl(url string) ([]byte, int, error) {
 
 	resp, err := c.c.Do(r)
 	if err != nil {
-		log.Errorf("cannot make request: %v\n")
+		log.Errorf("cannot make request, error: %s\n", err)
 		return nil, 500, err
 	}
 
@@ -52,7 +52,7 @@ func (c *client) GetDataFromUrl(url string) ([]byte, int, error) {
 	defer resp.Body.Close()
 
 	if err != nil {
-		log.Errorf("cannot read response: %v\n")
+		log.Errorf("cannot read response, error: %v\n", err)
 		return nil, 500, err
 	}
 
