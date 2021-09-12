@@ -1,0 +1,8 @@
+{
+  "environment": "dev",
+  "musement-api": "api-musement-example",
+  "weather-api": "api-weather-example",
+  "weather-api-key": "weather-api-key",
+  "log_file": "logtest.log",
+  "debug": true
+}
