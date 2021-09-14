@@ -53,8 +53,13 @@ go test -v ./... | sed ''/PASS/s//$(printf "\033[32mPASS\033[0m")/'' | sed ''/FA
 
 ### Run Cover test
 
+1. Generate cover file:
 ```bash
-go test -v ./... -cover
+go test ./.. -coverprofile=coverage.out
+```
+2. Inspect cover file with go tool cover
+```bash
+go tool cover -html=coverage.out
 ```
 
 ### Run clean Code goimport
