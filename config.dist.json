@@ -1,8 +1,8 @@
 {
   "environment": "dev",
-  "musement-api": "",
-  "weather-api": "",
-  "weather-api-key": "",
+  "musement-api": "https://sandbox.musement.com/api/v3",
+  "weather-api": "https://api.weatherapi.com/v1",
+  "weather-api-key": "d76a6bbc874649b59ad221512211109",
   "log_file": "log.log",
   "debug": true
 }
