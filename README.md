@@ -79,6 +79,18 @@ goimports -w -l *.go && golint *.go
 ### Static analysis with Sonar Qube
 https://sonarcloud.io/dashboard?id=NewRehtse_musement-test 
 
+### Get project documentation
+
+1. Instal godoc command
+```
+go get golang.org/x/tools/cmd/godoc
+```
+2. Run it
+```
+godoc -http=:6060
+```
+And open a browser: http://localhost:6060/pkg/
+
 ## Step 2
 
 I propose three endpoints:

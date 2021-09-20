@@ -1,3 +1,4 @@
+// Package utils has several functions useful for general purposes
 package utils
 
 import (
@@ -8,6 +9,7 @@ import (
 	"net/http"
 )
 
+// Client interface abstract a client to get data from different resources
 type Client interface {
 	GetDataFromUrl(url string) ([]byte, int, error)
 }
@@ -18,12 +20,19 @@ type client struct {
 
 var errorResourceNotFound = errors.New("Resource not found")
 var errorServiceUnavailable = errors.New("Service unavailable")
+var errorEmptyUrl = errors.New("URL is empty")
 
+// NewApiClient creates a new Client to make http requests
 func NewApiClient(c http.Client) Client {
 	return &client{c}
 }
 
+// GetDataFromUrl gets info from a given url
 func (c *client) GetDataFromUrl(url string) ([]byte, int, error) {
+	if len(url) == 0 {
+		log.Errorf("url is empty\n")
+		return nil, 500, errorEmptyUrl
+	}
 	r, err := http.NewRequest("GET", url, bytes.NewBuffer([]byte{}))
 
 	resp, err := c.c.Do(r)
