@@ -38,36 +38,26 @@ docker run --rm musement:latest
 Instructions: https://golang.org/doc/install
 * Install vendors
 ```bash
-go mod download
+make deps
 ```
 * Run application without building it
 ```bash
-go run main.go
-```
-* Or build executable
-```bash
-go build -o ./mus
-``` 
-* Run it!
-```bash
-./mus
+make build
+./bin/app
 ``` 
 
 #### Run tests
 
 ```bash
-go test -v ./... | sed ''/PASS/s//$(printf "\033[32mPASS\033[0m")/'' | sed ''/FAIL/s//$(printf "\033[31mFAIL\033[0m")/''
+make tests
 ```
 
-#### Run Cover test
+You can find coverage file in build/coverage.html
 
-1. Generate cover file:
+#### Run benchmarks
+
 ```bash
-go test ./.. -coverprofile=coverage.out
-```
-2. Inspect cover file with go tool cover
-```bash
-go tool cover -html=coverage.out
+make bench
 ```
 
 #### Run clean Code goimport
@@ -96,7 +86,7 @@ I propose three endpoints:
 
 I have update OpenApi specs for Musement's API here: https://app.swaggerhub.com/apis/n2628/MusmentApiBackendTechHomework/1.0.0
 
-You can get it as well at [musements_api_specs_v3.6.0.yaml](msuements_api_specs_3.6.0.yaml in repository)
+You can get it as well at [api_specs.yaml](api_specs.yaml)
 
 This is exactly what I added:
 
