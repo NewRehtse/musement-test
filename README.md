@@ -76,6 +76,9 @@ go get golang.org/x/tools/cmd/goimports
 goimports -w -l *.go && golint *.go
 ```
 
+### Static analysis with Sonar Qube
+https://sonarcloud.io/dashboard?id=NewRehtse_musement-test 
+
 ## Step 2
 
 I propose three endpoints:
