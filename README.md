@@ -46,10 +46,10 @@ make build
 ./bin/app
 ``` 
 
-#### Run tests
+#### Run test
 
 ```bash
-make tests
+make test
 ```
 
 You can find coverage file in build/coverage.html

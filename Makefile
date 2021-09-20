@@ -18,7 +18,7 @@ list:
 	@echo ""
 	@echo "  clean        > removes vendors and built package"
 	@echo ""
-	@echo "  tests        > run tests"
+	@echo "  test        > run test"
 	@echo "  bench        > run benchmarks"
 	@echo ""
 
@@ -56,8 +56,8 @@ copy_to_bin:
 # Testing features
 #------------------------------------------------
 
-.PHONY: tests
-tests:
+.PHONY: test
+test:
 	@echo "\n\033[92m***** RUNNING TESTS *****\033[0m"
 	@echo "\n\033[92m***** CLEAN SCENARIO *****\033[0m"
 	$(RM) -r build
