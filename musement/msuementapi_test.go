@@ -1,6 +1,7 @@
 package musement
 
 import (
+	"errors"
 	"fmt"
 	"io/ioutil"
 	"musement/utils"
@@ -67,5 +68,17 @@ func TestGetCitiesFromMusementAndGiveError400(t *testing.T) {
 
 	if err == nil {
 		t.Error("Error should be not found resource")
+	}
+}
+
+func TestGetCitiesFromMusementCouldNotGetFromApi(t *testing.T) {
+	client := utils.NewApiMockClient(nil, 500, errors.New("error"))
+
+	s := NewMusementApiService(client)
+
+	_, err := s.GetCities()
+
+	if err == nil {
+		t.Error("There should be an error")
 	}
 }
